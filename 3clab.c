@@ -20,7 +20,7 @@ void n_func(char word[])
 
 void main()
 {
-    char word[] = "q qwe swad  zcxc qwz";
+    char word[] = "we have text on condition";
     char s_t_a[128] = {};
     int k = 0;
     for (int i = 0; i <= strlen(word); i++)
