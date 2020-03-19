@@ -2,8 +2,23 @@
 #include <stdlib.h>
 #include <string.h>
 
-void n_func(char word[])
+void lower_string(char *string)
 {
+    while (*string)
+    {
+        if (*string >= 'A' && *string <= 'Z')
+        {
+            *string = *string + 32;
+        }
+        string++;
+    }
+}
+
+void n_func(char input[])
+{
+    char word[128];
+    strcpy(word, input);
+    lower_string(word);
     for (int i = 0; i < strlen(word); i++)
     {
         if (&word[i] != strrchr(word, word[i]))
@@ -13,7 +28,7 @@ void n_func(char word[])
         }
         else if (i == (strlen(word) - 1))
         {
-            printf("%s\n", word);
+            printf("%s\n", input);
         }
     }
 }
