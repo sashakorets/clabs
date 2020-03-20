@@ -32,10 +32,8 @@ void n_func(char input[])
         }
     }
 }
-
-void main()
+void f_task(char word[])
 {
-    char word[] = "we have text on condition";
     char s_t_a[128] = {};
     int k = 0;
     for (int i = 0; i <= strlen(word); i++)
@@ -52,4 +50,14 @@ void main()
             memset(s_t_a, 0, sizeof(s_t_a));
         }
     }
+}
+
+void main()
+{
+    system("clear");
+    printf("---------------------------------------------------------------------------------\n|\t\t\t\t\tlab 3\t\t\t\t\t|\n|\t\t\ttheme: Symbolic data processing\t\t\t\t|\n|Korets Sasha\t\t\t\t\t\t\t\tKM - 92 |\n|\t\t\t\t     variat - 4 \t\t\t\t|\n---------------------------------------------------------------------------------\npress any button ...\n");
+    getchar();
+    system("clear");
+    char word[] = "q qwe  swad  zcxc qwz"; // limit 127 characters
+    f_task(word);
 }
