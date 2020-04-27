@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 
 void lower_string(char *string)
@@ -16,6 +15,7 @@ void lower_string(char *string)
 
 void n_func(char input[])
 {
+    // this function checks the repetition of letters
     char word[128];
     strcpy(word, input);
     lower_string(word);
@@ -23,7 +23,7 @@ void n_func(char input[])
     {
         if (&word[i] != strrchr(word, word[i]))
         {
-            printf("|_____|\n");
+            printf("the same symbol is repeated twice in this word\n");
             break;
         }
         else if (i == (strlen(word) - 1))
@@ -34,7 +34,8 @@ void n_func(char input[])
 }
 void f_task(char word[])
 {
-    char s_t_a[128] = {};
+    // this function breaks the text into words
+    char s_t_a[128];
     int k = 0;
     for (int i = 0; i <= strlen(word); i++)
     {
@@ -52,12 +53,17 @@ void f_task(char word[])
     }
 }
 
-void main()
+int main(void)
 {
-    system("clear");
     printf("---------------------------------------------------------------------------------\n|\t\t\t\t\tlab 3\t\t\t\t\t|\n|\t\t\ttheme: Symbolic data processing\t\t\t\t|\n|Korets Sasha\t\t\t\t\t\t\t\tKM - 92 |\n|\t\t\t\t     variat - 4 \t\t\t\t|\n---------------------------------------------------------------------------------\npress any button ...\n");
-    getchar();
-    system("clear");
-    char word[] = "q qwe  swad  zcxc qwz"; // limit 127 characters
-    f_task(word);
+                                        // at the top of the start information
+    do
+    {
+        while ((getchar()) != '\n');        // clear buffer
+        char word[128];                     // limit 127 characters
+        printf("input ur text\n");
+        gets(word);                         // ur input
+        f_task(word);// go to see fucn
+        printf("\n\n\ngo try again\n");
+    }while(1);
 }
